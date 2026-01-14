@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center md:pt-20 pt-0 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/5" />
       <div className="absolute inset-0 opacity-30 dark:opacity-10">
