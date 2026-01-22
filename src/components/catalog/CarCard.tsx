@@ -1,7 +1,7 @@
-import { MessageCircle, Fuel, Gauge, Calendar } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Car, formatPrice, formatMileage } from '@/data/inventory';
+import { MessageCircle, Fuel, Gauge, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Car, formatPrice, formatMileage } from "@/data/inventory";
 
 interface CarCardProps {
   car: Car;
@@ -9,18 +9,30 @@ interface CarCardProps {
 
 export default function CarCard({ car }: CarCardProps) {
   const whatsappMessage = encodeURIComponent(
-    `Halo Berkat Sejahtera, saya tertarik dengan unit ${car.brand} ${car.model} - ${car.year}.`
+    `Halo Berkat Sejahtera, saya tertarik dengan unit ${car.brand} ${car.model} - ${car.year}.`,
   );
   const whatsappLink = `https://wa.me/6281234567890?text=${whatsappMessage}`;
 
   const getStatusBadge = () => {
     switch (car.status) {
-      case 'Available':
-        return <Badge className="bg-green-500/10 text-green-600 hover:bg-green-500/20 border-0">Tersedia</Badge>;
-      case 'Booked':
-        return <Badge className="bg-amber-500/10 text-amber-600 hover:bg-amber-500/20 border-0">Dipesan</Badge>;
-      case 'Sold':
-        return <Badge className="bg-red-500/10 text-red-600 hover:bg-red-500/20 border-0">Terjual</Badge>;
+      case "Available":
+        return (
+          <Badge className="bg-green-500/10 text-green-600 hover:bg-green-500/20 border-0">
+            Tersedia
+          </Badge>
+        );
+      case "Booked":
+        return (
+          <Badge className="bg-amber-500/10 text-amber-600 hover:bg-amber-500/20 border-0">
+            Dipesan
+          </Badge>
+        );
+      case "Sold":
+        return (
+          <Badge className="bg-red-500/10 text-red-600 hover:bg-red-500/20 border-0">
+            Terjual
+          </Badge>
+        );
       default:
         return null;
     }
@@ -37,7 +49,10 @@ export default function CarCard({ car }: CarCardProps) {
         />
         <div className="absolute top-3 left-3 flex gap-2">
           {getStatusBadge()}
-          <Badge variant="secondary" className="bg-card/90 backdrop-blur-sm">
+          <Badge
+            variant="default"
+            className="dark:bg-white bg-gray-900 backdrop-blur-sm"
+          >
             {car.transmission}
           </Badge>
         </div>
@@ -78,7 +93,7 @@ export default function CarCard({ car }: CarCardProps) {
             asChild
             size="sm"
             className="btn-accent rounded-lg"
-            disabled={car.status === 'Sold'}
+            disabled={car.status === "Sold"}
           >
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <MessageCircle className="w-4 h-4 mr-1.5" />

@@ -97,7 +97,7 @@ export default function HeroSection() {
           >
             <div className="relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80"
+                src="https://www.gardaoto.com/wp-content/uploads/2023/04/Screenshot-2023-04-27-105141.png"
                 alt="Mobil Premium"
                 className="rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]"
               />

@@ -18,9 +18,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <Car className="w-6 h-6 text-accent-foreground" />
-              </div>
+              <img src="images/logo.svg" width={80} />
               <div>
                 <span className="font-display font-bold text-lg">
                   Berkat Sejahtera
